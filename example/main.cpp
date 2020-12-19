@@ -83,11 +83,10 @@ int main() {
 
 	std::vector<rect_type> rectangles;
 
-	rectangles.emplace_back(rect_xywh(0, 0, 20, 40));
-	rectangles.emplace_back(rect_xywh(0, 0, 120, 40));
-	rectangles.emplace_back(rect_xywh(0, 0, 85, 59));
-	rectangles.emplace_back(rect_xywh(0, 0, 199, 380));
-	rectangles.emplace_back(rect_xywh(0, 0, 85, 875));
+	const int factor = 2;
+	rectangles.emplace_back(rect_xywh(0, 0, 3 * factor,  1 * factor));
+	rectangles.emplace_back(rect_xywh(0, 0, 2 * factor, 1 * factor));
+	rectangles.emplace_back(rect_xywh(0, 0, 1 * factor, 1 * factor));
 	
 	auto report_result = [&rectangles](const rect_wh& result_size) {
 		std::cout << "Resultant bin: " << result_size.w << " " << result_size.h << std::endl;
